@@ -13,7 +13,7 @@ df = pd.read_sql_query("""
 st.subheader('Job Postings Overview')
 st.dataframe(df)
 st.download_button('Export to CSV', df.to_csv(index=False), 'postings.csv')
-conn.close()
+
 
 
 st.subheader("Add New Job Posting")
@@ -27,3 +27,5 @@ with st.form("add_posting"):
     if st.form_submit_button("Save"):
         # Insert logic here
         st.success("Posting added!")
+
+conn.close()
